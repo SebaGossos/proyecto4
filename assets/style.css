@@ -1,0 +1,87 @@
+:root{
+    --primario: #6834a6;
+    --blanco: #fff;
+    --negro: #000;
+    --fuentePrincipal: 'Poppins', sans-serif;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+*,*:before, *:after{
+    box-sizing: inherit;
+}
+body{
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+h1,h2,h3{
+    font-weight: 900;
+    margin: 2rem 0;
+}
+h1{
+    font-size: 5rem;
+}
+h2{
+    font-size: 4.6rem;
+}
+h3{
+    font-size: 3rem;
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+
+/* Header */
+
+.header{
+    background-image: url(./img/header_bg.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 11rem;
+    padding: 5rem 0;
+}
+.header__contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+.header__logo{
+    width: 15rem;
+    margin: 0 auto 3rem auto;
+}
+
+
+@media (min-width: 768px) {
+    .header{
+        background-size: 45rem;
+    }
+    .header__barra{
+        display: flex;
+        justify-content: space-between;
+    }
+    .header__logo{
+        margin: 0;
+    }
+}
+@media (min-width: 992px) {
+    .header{
+        background-size: 60rem;
+    }
+}
+@media (min-width: 1280px) {
+    .header{
+        background-size: 100rem;
+    }
+}
+@media (min-width: 2200px) {
+    .header{
+        background-size: 130rem;
+    }
+}
+
