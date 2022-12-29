@@ -41,9 +41,22 @@ h3{
     margin: 0 auto;
     width: 90%;
 }
+[class$="__heading"]{
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+    [class$="__grid"]{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+        align-items: center;
+    }
+}
+
 /* --------------------------------------- */
 /* Header */
-
 .header{
     background-image: url(./img/header_bg.svg);
     background-repeat: no-repeat;
@@ -64,9 +77,10 @@ h3{
 .navegacion__link{
     color: var(--primario);
 }
-
+.navegacion__link--blanco{
+    color: var(--blanco);
+}
 .header__heading{
-    text-align: center;
     font-size: 3rem;
 }
 .header__boton{
@@ -95,12 +109,6 @@ h3{
     }
     .navegacion__link{
         color: var(--blanco);
-    }
-    .header__grid{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4rem;
-        align-items: center;
     }
     .header__heading{
         text-align: left;
@@ -134,20 +142,15 @@ h3{
 
 /* --------------------------------------- */
 /* Qué es Nucleus? */
-
 .nucleus{
     margin-top: 3rem;
-}
-.nucleus__heading{
-    text-align: center;
-    margin-bottom: 5rem;
 }
 .nucleus__grid{
     display: flex;
     flex-direction: column-reverse;
 }
-
 .listado__elemento{
+    background-color: var(--blanco);
     box-shadow: 0px 0px 10px 5px rgb(0 0 0 / .15);
     padding: 2rem;
     margin-bottom: 5rem;
@@ -165,11 +168,161 @@ h3{
     font-size: 2rem;
     margin: 0;
 }
+.listado__numero{
+    color: var(--primario);
+    font-size: 6rem;
+    margin: 0;
+    font-weight: 900;
+    text-align: center;
+}
+
 @media (min-width: 768px) {
     .nucleus__grid{
         display: grid;
         grid-template-columns: 1fr 2fr;
-        column-gap: 5rem;
+    }
+    .listado__elemento:last-of-type{
+        margin-bottom: 0;
+    }
+    .listado__elemento--2col{
+        display: flex;
+        justify-content: space-between;
         align-items: center;
+        gap: 2rem;
+    }
+    .listado__numero{
+        flex-basis: 20rem;
+        text-align: right;
+        font-size: 4rem;
+    }
+}
+
+/* --------------------------------------- */
+/* Seguridad */
+.seguridad{
+    background-color: var(--primario);
+    padding: 20rem 0;
+    position: relative;
+    margin: 10rem 0; 
+    overflow: hidden;
+}
+.seguridad::before,
+.seguridad::after{
+    background-color: var(--blanco);
+    content: "";
+    height: 20rem;
+    width: 120%;
+    position: absolute;
+}
+.seguridad::before{
+    top: -10rem;
+    left: 0rem;
+    transform: rotate(3deg);
+}
+.seguridad::after{
+    bottom: -10rem;
+    left: -3rem;
+    transform: rotate(-3deg);
+}
+.seguridad__heading{
+    color: var(--blanco);
+}
+
+/* --------------------------------------- */
+/* Comisiones */
+.comisiones__texto{
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .comisiones__grid{
+        display: grid;
+        align-items: flex-end;
+    }
+    .comisiones__texto{
+        text-align: left;
+    }
+}
+@media (min-width: 930px) {
+    .comisiones__grid{
+        display: grid;
+        align-items: center;
+    }
+}
+
+/* --------------------------------------- */
+/* Testimoniales */
+.testimoniales{
+    background-color: var(--primario);
+    padding: 5rem 0;
+}
+.testimoniales__heading{
+    color: var(--blanco);
+}
+.testimoniales__grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+}
+.testimonial{
+    background-color: var(--blanco);
+    box-shadow: 0px 0px 10px 5px rgb(0 0 0 / .15);
+    padding: 2rem;
+}
+.testimonial__texto{
+    font-weight: 500;
+    padding-left: 4rem ;
+    position: relative;
+}
+.testimonial__texto::before{
+    content: "";
+    background-image: url(./img/comilla.png);
+    background-repeat: no-repeat;
+    background-size: 3rem;
+    background-position: center;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    left: 0;
+}
+.testimonial__autor{
+    color: var(--primario);
+    font-weight: 700;
+    text-align: right;
+}
+
+@media (min-width: 768px) {
+    .testimoniales__grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --------------------------------------- */
+/* Footer */
+.footer{
+    background-color: #5a30a0;
+    padding: 5rem 0;
+}
+.footer__grid{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+.footer__logo{
+    width: 20rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .footer__grid{
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-between;
+    }
+    .footer__logo{
+        margin: 0;
     }
 }
